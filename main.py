@@ -25,7 +25,7 @@ async def on_member_join(member):
 
 @bot.event
 async def on_raw_reaction_add(payload):
-    if payload.message_id == 751030639519858791:
+    if payload.message_id == config["Welcome-Message-ID"]:
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g: g.id == guild_id, bot.guilds)
         if payload.emoji.name == '✅':
